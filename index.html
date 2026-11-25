@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - SMOFBAR | BPS Kabupaten Bangka Barat</title>
+  <meta name="description" content="Smart Office of BPS Bangka Barat (SMOFBAR) - Portal Struktur Tim Kerja, Matriks Kegiatan, Potret Statistik, dan Media Sosial BPS Kabupaten Bangka Barat.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/hero-bg.gif" fetchpriority="high">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="site-brand" href="index.html" aria-label="SMOFBAR Site home">
+        <img src="assets/images/logo.png" alt="SMOFBAR Logo" width="96" height="48">
+      </a>
+
+      <nav class="site-nav" aria-label="Navigasi Utama">
+        <button
+          type="button"
+          class="menu-button"
+          popovertarget="site-menu"
+          aria-controls="site-menu"
+          aria-expanded="false"
+          aria-label="Buka menu navigasi"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <ul id="site-menu" class="site-menu" popover="auto">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="subbagian-umum.html">Subbagian Umum</a></li>
+          <li><a href="manajemen-sdm.html">Manajemen SDM</a></li>
+          <li><a href="statistik-sosial.html">Statistik Sosial</a></li>
+          <li><a href="statistik-produksi.html">Statistik Produksi</a></li>
+          <li class="has-dropdown">
+            <button
+              type="button"
+              class="dropdown-trigger"
+              popovertarget="more-submenu"
+              aria-controls="more-submenu"
+              aria-expanded="false"
+            >
+              <span>More</span>
+              <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <ul id="more-submenu" class="dropdown-list">
+              <li><a href="statistik-distribusi.html">Statistik Distribusi</a></li>
+              <li><a href="nerwilis.html">Nerwilis</a></li>
+              <li><a href="pti.html">PTI</a></li>
+              <li><a href="manajemen-lapangan-dan-mitra.html">Manajemen Lapangan dan Mitra</a></li>
+              <li><a href="pembinaan-sektoral.html">Pembinaan Sektoral</a></li>
+              <li><a href="reformasi-birokrasi.html">Reformasi Birokrasi</a></li>
+              <li><a href="inovasi.html">Inovasi</a></li>
+              <li><a href="potd.html">POTD</a></li>
+              <li class="submenu-child"><a href="potd-maret-2024.html">Maret 2024</a></li>
+              <li class="submenu-child"><a href="potd-februari-2024.html">Februari 2024</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <button type="button" class="search-toggle" id="search-toggle" aria-label="Open search bar" aria-expanded="false" aria-controls="site-search-bar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="20" y1="20" x2="16.2" y2="16.2"></line>
+        </svg>
+      </button>
+    </div>
+
+    <search id="site-search-bar" class="search-bar" hidden>
+      <form class="search-form" id="search-form" role="search">
+        <label class="visually-hidden" for="site-search-input">Cari di halaman ini</label>
+        <input type="search" id="site-search-input" placeholder="Cari di SMOFBAR (misal: Matriks, Struktur, Evaluasi, Potret)..." autocomplete="off">
+        <button type="button" class="search-close" id="search-close" aria-label="Tutup pencarian">&times;</button>
+      </form>
+      <div class="search-results" id="search-results" hidden></div>
+    </search>
+  </header>
+
+  <main id="main-content">
+    <!-- Section 1: Hero Cover (Animated GIF + Parallax) -->
+    <section id="home" class="hero-section" aria-label="SMOFBAR Smart Office of BPS Bangka Barat">
+      <div class="hero-media-layer" id="hero-media-layer">
+        <img
+          src="assets/images/hero-bg.gif"
+          data-animated-src="assets/images/hero-bg.gif"
+          data-static-src="assets/images/hero-bg.jpg"
+          alt="SMOFBAR - Smart Office of BPS Bangka Barat"
+          class="hero-bg-image"
+          id="hero-bg-image"
+          width="1431"
+          height="840"
+          fetchpriority="high"
+        >
+      </div>
+      <button type="button" class="hero-motion-btn" id="hero-motion-btn" aria-label="Jeda animasi latar hero" title="Jeda animasi">
+        <svg class="icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <rect x="6" y="5" width="4" height="14" rx="1"></rect>
+          <rect x="14" y="5" width="4" height="14" rx="1"></rect>
+        </svg>
+        <svg class="icon-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" hidden>
+          <polygon points="7,5 19,12 7,19"></polygon>
+        </svg>
+        <span class="hero-motion-label">Jeda Animasi</span>
+      </button>
+      <button type="button" class="hero-scroll-btn" id="hero-scroll-btn" aria-label="Scroll down">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </section>
+
+    <!-- Section 2: Office Photo Carousel -->
+    <section id="office-gallery" class="content-section section-white" aria-label="Galeri Kantor BPS Kabupaten Bangka Barat">
+      <div class="container">
+        <div class="carousel carousel-office" data-carousel="office" data-autoplay="5000" role="region" aria-roledescription="carousel" aria-label="Galeri Kantor BPS Bangka Barat">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <div class="carousel-slide" aria-hidden="false">
+                <img src="assets/images/office-1.jpg" alt="Gedung Kantor BPS Kabupaten Bangka Barat tampak depan" width="1280" height="720" loading="lazy">
+              </div>
+              <div class="carousel-slide" aria-hidden="true">
+                <img src="assets/images/office-2.jpg" alt="Suasana Kantor BPS Kabupaten Bangka Barat" width="1280" height="720" loading="lazy">
+              </div>
+            </div>
+            <button type="button" class="carousel-arrow carousel-prev" aria-label="Slide sebelumnya">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="carousel-arrow carousel-next" aria-label="Slide berikutnya">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+          <div class="carousel-dots" role="tablist" aria-label="Pilih slide galeri kantor">
+            <button type="button" class="carousel-dot is-active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+            <button type="button" class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Dark Heading Banner - Struktur Tim Kerja -->
+    <section id="struktur-heading" class="banner-section section-dark">
+      <div class="container">
+        <h1 class="banner-title-oswald">STRUKTUR TIM KERJA BPS KABUPATEN BANGKA BARAT</h1>
+      </div>
+    </section>
+
+    <!-- Section 4: Struktur Tim Kerja Carousel (Sage Green Background) -->
+    <section id="struktur-tim" class="content-section section-sage" aria-label="Bagan Struktur Tim Kerja">
+      <div class="container">
+        <div class="carousel carousel-struktur" data-carousel="struktur" role="region" aria-roledescription="carousel" aria-label="Bagan Struktur Tim Kerja BPS Kabupaten Bangka Barat">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <div class="carousel-slide" aria-hidden="false">
+                <img src="assets/images/struktur-1.jpg" alt="Struktur Tim Kerja Badan Pusat Statistik Kabupaten Bangka Barat TA 2024" width="1600" height="900" loading="lazy">
+              </div>
+              <div class="carousel-slide" aria-hidden="true">
+                <img src="assets/images/struktur-2.jpg" alt="Struktur Tim Kerja BPS Kabupaten Bangka Barat Slide 2" width="1600" height="900" loading="lazy">
+              </div>
+            </div>
+            <button type="button" class="carousel-arrow carousel-prev" aria-label="Slide sebelumnya">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="carousel-arrow carousel-next" aria-label="Slide berikutnya">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+          <div class="carousel-dots" role="tablist" aria-label="Pilih slide struktur tim kerja">
+            <button type="button" class="carousel-dot is-active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+            <button type="button" class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 4-Column Action Cards Grid -->
+    <section id="matriks-layanan" class="content-section section-white cards-section" aria-label="Tautan Matriks dan Evaluasi SMOFBAR">
+      <div class="container">
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <article class="portal-card">
+            <div class="card-media">
+              <img src="assets/images/card-1.jpg" alt="Ilustrasi Matriks Kegiatan" width="860" height="640" loading="lazy">
+            </div>
+            <a class="teal-btn" href="https://docs.google.com/spreadsheets/d/10-wd-haQVD0eNC7fGLeZn9FlkASmUpQS/edit?usp=sharing&amp;ouid=105975142079880427116&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" title="2024 - MATRIKS KEGIATAN">
+              <span>2024 - MATRIKS KEGIATAN</span>
+            </a>
+            <h2 class="card-title">Matriks Seluruh Kegiatan<br>BPS Kabupaten Bangka Barat</h2>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="portal-card">
+            <div class="card-media">
+              <img src="assets/images/card-2.jpg" alt="Ilustrasi Matriks Beban Kerja dan Honor" width="1280" height="943" loading="lazy">
+            </div>
+            <a class="teal-btn" href="https://docs.google.com/spreadsheets/d/1vGGNUW0auQOJxX_YzSFYIaGaZtG9VOC1/edit?usp=sharing&amp;ouid=114779463299010124271&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" title="Matriks Beban Kerja dan Honor">
+              <span>Matriks Beban Kerja dan Honor</span>
+            </a>
+            <h2 class="card-title card-title-sm">Matriks Pekerjaan dan Honor Seluruh Organik/Non Organik</h2>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="portal-card">
+            <div class="card-media">
+              <img src="assets/images/card-3.jpg" alt="Ilustrasi List to Do SMOFBAR" width="1280" height="938" loading="lazy">
+            </div>
+            <a class="teal-btn" href="https://docs.google.com/spreadsheets/d/1hALuyYQs06pWE80R7jXIAeBVkASHglxm7zgQgbNJH-M/edit?usp=sharing" target="_blank" rel="noopener noreferrer" title="List to Do SMOFBAR">
+              <span>List to Do SMOFBAR</span>
+            </a>
+            <h2 class="card-title card-title-sm">Daftar Pengembangan SMOFBAR menurut Fungsi</h2>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="portal-card">
+            <a class="card-media card-media-link" href="https://docs.google.com/spreadsheets/d/1fRN2fl6ko8KChECjY0CFWDZsfOxUJLZE2KckaPFnrsA/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Buka spreadsheet evaluasi SMOFBAR">
+              <img src="assets/images/card-4.jpg" alt="Ilustrasi Evaluasi SMOFBAR" width="705" height="517" loading="lazy">
+            </a>
+            <a class="teal-btn" href="http://s.bps.go.id/evalsmofbar" target="_blank" rel="noopener noreferrer" title="Evaluasi SMOFBAR">
+              <span>Evaluasi SMOFBAR</span>
+            </a>
+            <a class="teal-btn" href="analisis-evaluasi.html" title="Analisis angket evaluasi">
+              <span>Analisis angket evaluasi</span>
+            </a>
+            <p class="card-desc">link pengisian evaluasi dan masukan terhadap penggunaan SMOFBAR</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Quote Strip -->
+    <section class="quote-section section-white" aria-label="Catatan">
+      <div class="container">
+        <p class="quote-text">percuma absen tepat waktu, kalo di jam kerja kosong mulu</p>
+      </div>
+    </section>
+
+    <!-- Section 7: Dark Heading Banner - Potret Statistik Bangka Barat -->
+    <section id="potret-heading" class="banner-section section-dark">
+      <div class="container">
+        <h2 class="banner-title-montserrat">POTRET STATISTIK BANGKA BARAT</h2>
+      </div>
+    </section>
+
+    <!-- Section 8: Potret Statistik Carousel (8 Slides) -->
+    <section id="potret-statistik" class="content-section section-white" aria-label="Carousel Potret Statistik Bangka Barat">
+      <div class="container">
+        <div class="carousel carousel-potret" data-carousel="potret" data-autoplay="6000" role="region" aria-roledescription="carousel" aria-label="Potret Statistik Bangka Barat">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <div class="carousel-slide" aria-hidden="false">
+                <img src="assets/images/potret-1.jpg" alt="Potret Statistik Bangka Barat - Slide 1" width="1600" height="900" loading="lazy">
+              </div>
+              <div class="carousel-slide" aria-hidden="true">
+                <img src="assets/images/potret-2.jpg" alt="Potret Statistik Bangka Barat - Slide 2" width="1600" height="900" loading="lazy">
+              </div>
+              <div class="carousel-slide" aria-hidden="true">
+                <img src="assets/images/potret-3.jpg" alt="Potret Statistik Bangka Barat - Slide 3" width="1600" height="900" loading="lazy">
+              </div>
+              <div class="carousel-slide" aria-hidden="true">
+                <img src="assets/images/potret-4.jpg" alt="Potret Statistik Bangka Barat - Slide 4" width="1600" height="900" loading="lazy">
+              </div>
+              <div class="carousel-slide" aria-hidden="true">
+                <img src="assets/images/potret-5.jpg" alt="Potret Statistik Bangka Barat - Slide 5" width="1600" height="900" loading="lazy">
+              </div>
+              <div class="carousel-slide" aria-hidden="true">
+                <img src="assets/images/potret-6.jpg" alt="Potret Statistik Bangka Barat - Slide 6" width="1600" height="900" loading="lazy">
+              </div>
+              <div class="carousel-slide" aria-hidden="true">
+                <img src="assets/images/potret-7.jpg" alt="Potret Statistik Bangka Barat - Slide 7" width="1600" height="900" loading="lazy">
+              </div>
+              <div class="carousel-slide" aria-hidden="true">
+                <img src="assets/images/potret-8.jpg" alt="Potret Statistik Bangka Barat - Slide 8" width="1600" height="900" loading="lazy">
+              </div>
+            </div>
+            <button type="button" class="carousel-arrow carousel-prev" aria-label="Slide sebelumnya">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="carousel-arrow carousel-next" aria-label="Slide berikutnya">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+          <div class="carousel-dots" role="tablist" aria-label="Pilih slide Potret Statistik">
+            <button type="button" class="carousel-dot is-active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+            <button type="button" class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+            <button type="button" class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+            <button type="button" class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+            <button type="button" class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 5"></button>
+            <button type="button" class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 6"></button>
+            <button type="button" class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 7"></button>
+            <button type="button" class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 8"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Dark Heading Banner - Media Sosial -->
+    <section id="media-sosial-heading" class="banner-section section-dark">
+      <div class="container">
+        <h2 class="banner-title-montserrat">MEDIA SOSIAL</h2>
+      </div>
+    </section>
+
+    <!-- Section 10: Social Media Icons -->
+    <section id="media-sosial" class="content-section section-white social-section" aria-label="Tautan Media Sosial BPS Kabupaten Bangka Barat">
+      <div class="container">
+        <ul class="social-row">
+          <li>
+            <a class="social-link" href="https://www.instagram.com/bpskabbangkabarat/" target="_blank" rel="noopener noreferrer" aria-label="Instagram BPS Kabupaten Bangka Barat">
+              <img src="assets/images/social-instagram.png" alt="Instagram" width="119" height="119" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a class="social-link" href="https://www.youtube.com/channel/UCGAZVY1p74KlQbs1L1KhGtg" target="_blank" rel="noopener noreferrer" aria-label="YouTube BPS Kabupaten Bangka Barat">
+              <img src="assets/images/social-youtube.png" alt="YouTube" width="119" height="119" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a class="social-link" href="https://www.facebook.com/bpsbabar/" target="_blank" rel="noopener noreferrer" aria-label="Facebook BPS Kabupaten Bangka Barat">
+              <img src="assets/images/social-facebook.png" alt="Facebook" width="119" height="119" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Section 11: Footer -->
+  <footer class="site-footer section-dark">
+    <div class="container">
+      <ul class="footer-list">
+        <li>
+          copyright @ BPS Kabupaten Bangka Barat&nbsp;
+          <a class="footer-hidden-link" href="https://skd.bps.go.id/SKD2022/web/hasil/dashboard/index" target="_blank" rel="noopener noreferrer" aria-label="Dashboard SKD BPS">.</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
