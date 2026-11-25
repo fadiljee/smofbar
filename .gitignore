@@ -1,0 +1,18 @@
+# Ignore semua file dan folder secara default
+*
+
+# Simpan file konfigurasi .gitignore sendiri
+!/.gitignore
+
+# File utama yang menampilkan website di root (HTML, CSS, JS)
+!/*.html
+!/*.css
+!/*.js
+
+# Aset gambar yang direferensikan langsung oleh HTML website
+!/assets/
+!/assets/images/
+!/assets/images/*
+
+# Tetap ignore hasil konversi WebP khusus FigCraft
+/assets/images/webp/
