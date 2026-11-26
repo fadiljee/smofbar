@@ -261,7 +261,7 @@
   });
 
   /* ========================================================================
-     3. Header Scroll Elevation, Hero GIF Control, Parallax Fallback & Scroll
+     3. Header Scroll Elevation, Hero Reduced Motion, Parallax Fallback & Scroll
      ======================================================================== */
   const prefersReducedMotionQuery = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
@@ -274,35 +274,16 @@
   window.addEventListener("scroll", syncHeaderScroll, { passive: true });
   syncHeaderScroll();
 
-  // Hero animated GIF Pause/Play control (WCAG 2.2.2 + reduced-motion)
+  // Respect prefers-reduced-motion for hero animated GIF
   const heroBgImg = document.getElementById("hero-bg-image");
-  const heroMotionBtn = document.getElementById("hero-motion-btn");
-  if (heroBgImg && heroMotionBtn) {
-    const iconPause = heroMotionBtn.querySelector(".icon-pause");
-    const iconPlay = heroMotionBtn.querySelector(".icon-play");
-    const labelEl = heroMotionBtn.querySelector(".hero-motion-label");
-    let isHeroPaused = prefersReducedMotionQuery.matches;
-
-    const applyHeroMotionState = () => {
-      heroBgImg.src = isHeroPaused
+  if (heroBgImg) {
+    const syncHeroMotion = () => {
+      heroBgImg.src = prefersReducedMotionQuery.matches
         ? heroBgImg.dataset.staticSrc
         : heroBgImg.dataset.animatedSrc;
-      iconPause.hidden = isHeroPaused;
-      iconPlay.hidden = !isHeroPaused;
-      labelEl.textContent = isHeroPaused ? "Putar Animasi" : "Jeda Animasi";
-      heroMotionBtn.setAttribute(
-        "aria-label",
-        isHeroPaused ? "Putar animasi latar hero" : "Jeda animasi latar hero"
-      );
-      heroMotionBtn.title = isHeroPaused ? "Putar animasi" : "Jeda animasi";
     };
-
-    heroMotionBtn.addEventListener("click", () => {
-      isHeroPaused = !isHeroPaused;
-      applyHeroMotionState();
-    });
-
-    applyHeroMotionState();
+    syncHeroMotion();
+    prefersReducedMotionQuery.addEventListener("change", syncHeroMotion);
   }
 
   // Hero Parallax Fallback for browsers without CSS Scroll-Driven Animations
@@ -384,12 +365,11 @@
   }
 
   /* ========================================================================
-     4. Accessible Multi-Instance Carousels (with WCAG 2.2.2 Pause Control)
+     4. Accessible Multi-Instance Carousels
      ======================================================================== */
   document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     const track = carousel.querySelector(".carousel-track");
     const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
-    const dotsContainer = carousel.querySelector(".carousel-dots");
     const dots = Array.from(carousel.querySelectorAll(".carousel-dot"));
     const prevBtn = carousel.querySelector(".carousel-prev");
     const nextBtn = carousel.querySelector(".carousel-next");
@@ -397,7 +377,6 @@
 
     let current = 0;
     let timer = null;
-    let userPaused = prefersReducedMotionQuery.matches;
 
     const goTo = (index) => {
       current = (index + slides.length) % slides.length;
@@ -420,31 +399,15 @@
     };
 
     const startAutoplay = () => {
-      if (!autoplayMs || userPaused) return;
+      if (!autoplayMs || prefersReducedMotionQuery.matches) return;
       stopAutoplay();
       timer = setInterval(() => goTo(current + 1), autoplayMs);
     };
 
-    if (autoplayMs > 0 && dotsContainer) {
-      const pauseBtn = document.createElement("button");
-      pauseBtn.type = "button";
-      pauseBtn.className = "carousel-pause-btn";
-      const syncPauseLabel = () => {
-        pauseBtn.textContent = userPaused ? "Putar" : "Jeda";
-        pauseBtn.setAttribute(
-          "aria-label",
-          userPaused ? "Putar slide otomatis" : "Jeda slide otomatis"
-        );
-      };
-      pauseBtn.addEventListener("click", () => {
-        userPaused = !userPaused;
-        syncPauseLabel();
-        if (userPaused) stopAutoplay();
-        else startAutoplay();
-      });
-      syncPauseLabel();
-      dotsContainer.appendChild(pauseBtn);
-    }
+    prefersReducedMotionQuery.addEventListener("change", () => {
+      if (prefersReducedMotionQuery.matches) stopAutoplay();
+      else startAutoplay();
+    });
 
     prevBtn.addEventListener("click", () => {
       goTo(current - 1);

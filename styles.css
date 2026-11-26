@@ -542,31 +542,6 @@ a {
   }
 }
 
-.hero-motion-btn {
-  position: absolute;
-  inset-block-end: 18px;
-  inset-inline-start: 18px;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 999px;
-  background-color: rgba(19, 79, 92, 0.72);
-  color: var(--color-white);
-  font-family: var(--font-body);
-  font-size: 12.5px;
-  font-weight: 700;
-  cursor: pointer;
-  backdrop-filter: blur(4px);
-  transition: background-color 0.18s ease, transform 0.18s ease;
-}
-
-.hero-motion-btn:hover {
-  background-color: rgba(19, 79, 92, 0.94);
-}
-
 @keyframes chevron-float {
   0%, 100% {
     transform: translateX(-50%) translateY(0);
@@ -855,25 +830,6 @@ a {
     transform: scale(2.6);
     opacity: 0;
   }
-}
-
-.carousel-pause-btn {
-  margin-inline-start: 10px;
-  padding: 2px 10px;
-  border: 1px solid rgba(19, 79, 92, 0.35);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--color-teal);
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.carousel-pause-btn:hover {
-  background-color: var(--color-teal);
-  color: var(--color-white);
 }
 
 .card-title {
